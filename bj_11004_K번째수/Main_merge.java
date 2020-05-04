@@ -39,7 +39,7 @@ public class Main_merge {
 		int[] temp = new int[end - start + 1];
 		
 		while (L <= mid && R <= end) {
-			if (data[L] < data[mid])
+			if (data[L] < data[R])
 				temp[idx++] = data[L++];
 			else
 				temp[idx++] = data[R++];

@@ -2,15 +2,14 @@ package bj_09466_팀프로젝트;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main2 {
 	
-	static int N, arr[], count;
-	static boolean visit[];
-	static Queue<Integer> q;
+	static int N, arr[], count, visit[];
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,60 +19,75 @@ public class Main2 {
 		int T = Integer.parseInt(br.readLine());
 		for (int t = 1; t <= T; t++) {
 			count = 0;
-			q = new LinkedList<Integer>();
 			
 			N = Integer.parseInt(br.readLine());
 			arr = new int[N + 1];
-			visit = new boolean[N + 1];
+			visit = new int[N + 1];
 			
 			int temp;
 			st = new StringTokenizer(br.readLine());
 			for (int i = 1; i <= N; i++) {
 				temp = Integer.parseInt(st.nextToken());
 				if (i == temp) {
-					visit[i] = true;
+					visit[i] = i;
 					count++;
 				} else {
 					arr[i] = temp;
 				}
 			}
-			
 			makeTeam();
-			System.out.println(N - count);
+			sb.append(N - count + "\n");
+//			System.out.println(Arrays.toString(arr));
+//			System.out.println(Arrays.toString(visit));
+//			System.out.println("count " + count);
 		}
+		System.out.println(sb);
 	}
 
 	private static void makeTeam() {
 		for (int i = 1; i <= N; i++) {
-//			System.out.println("i는 " + i + " arr[i]는 " + arr[i]);
-			if (visit[i]) continue;
-			else {
-				q.add(i);
-				visit[i] = true;
-				int now = i;
-				
-				if (visit[arr[i]]) {
-					count++;
-					visit[i] = true;
-					q.poll();
-					continue;
-				}
-				
-				while (!visit[arr[now]]) {
-//					System.out.println("now " + now + "와 " + arr[now] + "를 연결 ");
-					now = arr[now];
-					visit[arr[now]] = true;
-					q.add(arr[now]);
-				}
-				
-				if (q.peek() == arr[now]) {
-					count += q.size();
-					q.clear();
-				} else {
-					while (!q.isEmpty())
-						visit[q.poll()] = false;
+			if (visit[i] == 0) {
+				visit[i] = i;
+				int idx = searchCycleDfs(arr[i], i);
+//				System.out.println("idx " + idx);
+				if (idx != -1) {
+					int temp = countDfs(idx, arr[idx], 1);
+//					System.out.println(">>" + temp);
+					count += temp;
 				}
 			}
 		}
 	}
+
+	private static int countDfs(int start, int idx, int cnt) {
+//		System.out.println("start " + start + " idx " + idx);
+		if (start == idx)
+			return cnt;
+//		if (visit[start] == visit[idx])
+			return countDfs(start, arr[idx], cnt + 1);
+	}
+
+	private static int searchCycleDfs(int now, int idx) {
+		if (visit[now] == idx)
+			return now;
+		else if (visit[now] != 0)
+			return -1;
+		
+		visit[now] = idx;
+		return searchCycleDfs(arr[now], idx);
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//QuickSort
-public class Main_quick {
-	
+public class Merge {
+
 	static int N, K, data[];
 	
 	public static void main(String[] args) throws Exception {
@@ -21,33 +20,34 @@ public class Main_quick {
 		for (int i = 0; i < N; i++)
 			data[i] = Integer.parseInt(st.nextToken());
 		
-		quick(0, N - 1);
+		merge(0, N - 1);
 		System.out.println(data[K - 1]);
 	}
 
-	private static void quick(int start, int end) {
+	private static void merge(int start, int end) {
 		if (start == end) return;
 		
-		int mid = partition(start, end);
-		quick(start, mid - 1);
-		quick(mid, end);
+		int mid = (start + end) >> 1;
+		merge(start, mid);
+		merge(mid + 1, end);
+		mergesort(start, mid, end);
 	}
 
-	private static int partition(int start, int end) {
-		int pivot = data[(start + end) >> 1];
-		while (start <= end) {
-			while (data[start] < pivot) start++;
-			while (data[end] > pivot) end--;
-			
-			if (start <= end)
-				swap(start++, end--);
+	private static void mergesort(int start, int mid, int end) {
+		int L = start, R = mid + 1, idx = 0;
+		int[] temp = new int[end - start + 1];
+		
+		while (L <= mid && R <= end) {
+			if (data[L] < data[R])
+				temp[idx++] = data[L++];
+			else
+				temp[idx++] = data[R++];
 		}
-		return start;
-	}
-
-	private static void swap(int a, int b) {
-		int temp = data[a];
-		data[a] = data[b];
-		data[b] = temp;
+		
+		while (L <= mid) temp[idx++] = data[L++];
+		while (R <= end) temp[idx++] = data[R++];
+		
+		for (int i = 0, len = temp.length; i < len; i++)
+			data[start + i] = temp[i];
 	}
 }
