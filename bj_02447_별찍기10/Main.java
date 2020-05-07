@@ -2,9 +2,9 @@ package bj_02447_별찍기10;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
-//더 효율 ? 
+//처음에는 다 칠해놓고 빈칸만 비우는게(Main2) 더 효율적일줄 알았지만 별 차이가 없다. 왜일까?
+//아마 어차피 다 덮어야 해서 그런듯! (별도 빈칸도 결국에는 새로 그리게 되니까) 
 public class Main {
 	
 	static char[][] map;
@@ -14,9 +14,6 @@ public class Main {
 		StringBuilder sb = new StringBuilder();
 		int N = Integer.parseInt(br.readLine());
 		map = new char[N][N];
-		
-		for (int i = 0; i < N; i++)
-			Arrays.fill(map[i], '*');
 		
 		recursion(N);
 
@@ -29,8 +26,8 @@ public class Main {
 	}
 
 	private static void recursion(int n) {
-		if (n == 3) {
-			map[1][1] = ' ';
+		if (n == 0) {
+			map[0][0] = '*';
 			return;
 		}
 		
