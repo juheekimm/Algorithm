@@ -1,4 +1,4 @@
-package bj_09466_팀프로젝트;
+package bj_09466_텀프로젝트;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
