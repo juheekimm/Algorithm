@@ -1,4 +1,4 @@
-package bj_14501_퇴사;
+package bj_14501_퇴사_c;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

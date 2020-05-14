@@ -1,4 +1,4 @@
-package bj_14501_퇴사;
+package bj_14501_퇴사_c;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -26,7 +26,7 @@ public class Main2 {
 	}
 
 	private static void dfs(int now, int price) {
-		if (now < N && maxPrice < price)
+		if (now <= N && maxPrice < price)
 			maxPrice = price;
 		if (now >= N)
 			return;
