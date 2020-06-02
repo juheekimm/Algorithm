@@ -52,7 +52,6 @@ public class Main4 {
 				return i + 1;
 			System.out.println("i " + i + " count " + count);
 		}
-		System.out.println("김준호바보 ");
 		return 0;
 	}
 

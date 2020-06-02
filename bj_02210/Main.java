@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-// 190805 갓준호님 힌트. 20m
+// 190805 갓케 힌트. 20m
 public class Main {
 
 	private static String[][] map;

@@ -48,7 +48,7 @@ public class Main {
 			Node temp = q.poll();
 			int nx, ny;
 			
-			//갓준호님 팁
+			//갓케 팁
 			if (temp.x == h - 1 && temp.y == w - 1) {
 				System.out.println(temp.step);
 				return;

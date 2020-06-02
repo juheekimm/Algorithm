@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-//191222 준호오빠 코드 보고 다시 풀어봄
+//191222 갓케 코드 보고 다시 풀어봄
 //bfs에서 visit 쓰면 된다는점을 간과해서 더 어렵게 푼 것 같음
 //굳이 큐 쓰고 사이즈 체크하지 않아도 리스트 잘 사용하면 훨씬 효율적으로 풀 수 있음!
 public class Main_improve {

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main_준호오빠도움 {
+public class Main_도움 {
 	
 	private static class Node implements Comparable<Node> {
 		int x, y, val;
