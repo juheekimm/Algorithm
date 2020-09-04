@@ -1,4 +1,4 @@
-package bj_01260;
+package bj_01260_DFSì™€BFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,8 +8,8 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main_my {
-	static int vertex;	//Á¤Á¡
-	static int edge;	//°£¼±
+	static int vertex;	//ï¿½ï¿½ï¿½ï¿½
+	static int edge;	//ï¿½ï¿½ï¿½ï¿½
 	static int[][] graph;
 	static boolean[] isVisit;
 	
@@ -24,7 +24,7 @@ public class Main_my {
 		edge = Integer.parseInt(st.nextToken());
 		int start = Integer.parseInt(st.nextToken());
 
-		//Á¤Á¡ÀÌ 1ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î ÀÏºÎ·¯ 1¾¿ Å©°Ô ¼³Á¤
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¹Ç·ï¿½ ï¿½ÏºÎ·ï¿½ 1ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		graph = new int[vertex + 1][vertex + 1];
 		int n, m;
 		for (int i = 0; i < edge; i++) {

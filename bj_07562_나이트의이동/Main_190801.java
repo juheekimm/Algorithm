@@ -1,9 +1,9 @@
-package bj_07562;
+package bj_07562_나이트의이동;
 
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main_190801 {
 	private static class Node {
 		int x, y, step;
 		Node(int x, int y, int step) {

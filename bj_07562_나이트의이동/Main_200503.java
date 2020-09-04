@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main_200503 {
 
 	static int N, ex, ey, map[][];
 	static int[] dx = {1, 1, 2, 2, -1, -1, -2, -2};

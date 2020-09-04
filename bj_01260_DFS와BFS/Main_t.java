@@ -1,11 +1,11 @@
-package bj_01260;
+package bj_01260_DFSì™€BFS;
 
 import java.io.*;
 import java.util.*;
 
 public class Main_t {
-	static int vertex;	//Á¤Á¡
-	static int edge;	//°£¼±
+	static int vertex;	//ï¿½ï¿½ï¿½ï¿½
+	static int edge;	//ï¿½ï¿½ï¿½ï¿½
 	static ArrayList<Integer>[] graph;
 	static boolean[] isVisit;
 	
@@ -18,7 +18,7 @@ public class Main_t {
 		edge = stoi(st.nextToken());
 		int start = stoi(st.nextToken());
 		
-		//Á¤Á¡ÀÌ 1ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î ÀÏºÎ·¯ 1¾¿ Å©°Ô ¼³Á¤
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¹Ç·ï¿½ ï¿½ÏºÎ·ï¿½ 1ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		graph = new ArrayList[vertex+1];
 		for(int i = 1; i <= vertex; i++) {
 			graph[i] = new ArrayList<>();
