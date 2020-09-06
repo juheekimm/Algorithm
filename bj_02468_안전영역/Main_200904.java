@@ -5,7 +5,8 @@ import java.util.*;
 
 public class Main_200904 {
 
-	static int N, map[][], max = 1;
+	//적어도 -1은 안나올테니까, 한번은 다른 값이 나올테니까 max는 -1로 두고 해야 함 
+	static int N, map[][], max = -1;
 	static int[] dx = {1, 0, -1, 0};
 	static int[] dy = {0, 1, 0, -1};
 	static boolean[][] check;
@@ -24,7 +25,8 @@ public class Main_200904 {
 				map[i][j] = stoi(st.nextToken());
 		}
 		
-		for (int i = 1; i <= 100; i++) {
+		//비가 하나도 안올 수도 있으니까 0부터 
+		for (int i = 0; i <= 100; i++) {
 			for (int j = 0; j < N; j++)
 				Arrays.fill(check[j], false);
 			

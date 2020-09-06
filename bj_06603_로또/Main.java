@@ -1,4 +1,4 @@
-package bj_06603;
+package bj_06603_로또;
 
 import java.io.BufferedReader;
 import java.io.IOException;
