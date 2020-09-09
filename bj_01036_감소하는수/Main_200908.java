@@ -17,7 +17,7 @@ public class Main_200908 {
 		while (true) {
 			for (int i = 1; i <= 9; i++) {
 				save = 0;
-				backTracking(numLen, 1, i, i);
+				backTracking(numLen, 1, i, i * (int)Math.pow(10, numLen - 1));
 				map.put(i * (int)Math.pow(10, numLen - 1), save);
 				System.out.println(i * (int)Math.pow(10, numLen - 1) + " " + save);
 			}
@@ -37,7 +37,7 @@ public class Main_200908 {
 		}
 		
 		for (int addNum = 0; addNum < lastNum; addNum++) {
-			backTracking(numLen, nowLen + 1, addNum, num * 10 + addNum);
+//			backTracking(numLen, nowLen + 1, addNum, num + addNum * (int)Math.pow(numLen,a));
 			System.out.println(num * 10 + addNum);
 			save++;
 		}
