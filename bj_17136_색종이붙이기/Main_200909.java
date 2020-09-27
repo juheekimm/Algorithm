@@ -29,15 +29,15 @@ public class Main_200909 {
 				map[i][j] = Integer.parseInt(st.nextToken());
 		}
 		
-		backTracking(0);
+		backTracking();
 		if (min == Integer.MAX_VALUE)
 			System.out.println(-1);
 		else
 			System.out.println(min);
 	}
 
-	private static void backTracking(int startN) {
-		Node temp = findStart(startN);
+	private static void backTracking() {
+		Node temp = findStart();
 		int x = temp.x;
 		int y = temp.y;
 		if (x == -1) {
@@ -55,7 +55,7 @@ public class Main_200909 {
 			if (enableCheck(x, y, size)) {
 				paper[size]--;
 				drawer(x, y, size, true);
-				backTracking(x);
+				backTracking();
 				paper[size]++;
 				drawer(x, y, size, false);
 			}
@@ -90,8 +90,8 @@ public class Main_200909 {
 		return true;
 	}
 
-	private static Node findStart(int x) {
-		for (int i = x; i < 10; i++)
+	private static Node findStart() {
+		for (int i = 0; i < 10; i++)
 			for (int j = 0; j < 10; j++)
 				if (map[i][j] == 1 && !visit[i][j])
 					return new Node(i, j);

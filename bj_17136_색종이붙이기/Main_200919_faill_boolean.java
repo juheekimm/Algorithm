@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_200910 {
+public class Main_200919_faill_boolean {
 	
 	static class Node {
 		int x, y;
