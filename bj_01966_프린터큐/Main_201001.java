@@ -1,4 +1,4 @@
-package bj_0196_프린터큐;
+package bj_01966_프린터큐;
 
 import java.io.*;
 import java.util.*;
