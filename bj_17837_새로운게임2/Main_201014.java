@@ -1,9 +1,7 @@
 package bj_17837_새로운게임2;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main_201014 {
 	
@@ -76,12 +74,11 @@ public class Main_201014 {
 					ny = y + dy[d];
 					horses[i].d = d;
 					
-					System.out.println("x " + nx + " y " + ny);
 					if (nx < 0 || nx >= N || ny < 0 || ny >= N || color[nx][ny] == 2)
 						continue;
 				}
 				
-				if (move(i, x, y, nx, ny, color[nx][ny] != 0))
+				if (move(i, x, y, nx, ny, color[nx][ny] == 1))
 					return turn;
 			}
 		}
@@ -111,7 +108,6 @@ public class Main_201014 {
 		for (int i = 0; i < map[x][y].size(); i++)
 			if (map[x][y].get(i) == n)
 				return i;
-		
 		return 0;
 	}
 
@@ -119,24 +115,3 @@ public class Main_201014 {
 		return Integer.parseInt(str);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
